@@ -5,6 +5,8 @@ import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/records")
 public class RecordController {
@@ -13,6 +15,11 @@ public class RecordController {
 
     public RecordController(RecordRepository recordRepository) {
         this.recordRepository = recordRepository;
+    }
+
+    @GetMapping
+    public List<Record> list() {
+        return recordRepository.findAll();
     }
 
     @PostMapping
