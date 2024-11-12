@@ -1,0 +1,7 @@
+CREATE TABLE record (
+    id UUID PRIMARY KEY,
+    user_id VARCHAR(255) NOT NULL,
+    datetime TIMESTAMP NOT NULL,
+    latitude DOUBLE PRECISION NOT NULL,
+    longitude DOUBLE PRECISION NOT NULL
+);
