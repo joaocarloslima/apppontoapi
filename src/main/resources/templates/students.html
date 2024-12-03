@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ponto App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../tailwind-config.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="../icons.js" defer></script>
+    <link rel="stylesheet" href="../global.css">
+
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans">
+<div class="min-h-screen flex">
+    <!-- Sidebar -->
+    <aside class="w-64 bg-gray-800 p-4 flex flex-col">
+        <div class="flex items-center justify-between mb-8">
+            <h1 class="text-lg font-bold text-yellow-400">Senac</h1>
+        </div>
+        <div class="space-y-4">
+
+            <a href="#" class="flex items-center gap-2 py-2 px-4 rounded hover:bg-gray-700">
+                <i data-lucide="circle-gauge"></i>
+                Dashboard
+            </a>
+            <a href="#" class="flex gap-2 py-2 px-4 rounded bg-gray-700 text-yellow-400">
+                <i data-lucide="users" class="w-5 h-5"></i>
+                <span>Students</span>
+            </a>
+            <a href="#" class="flex items-center gap-2 py-2 px-4 rounded hover:bg-gray-700">
+                <i data-lucide="file-text" class="w-5 h-5"></i>
+                <span>Records</span>
+            </a>
+            <a href="#" class="flex items-center gap-2 py-2 px-4 rounded hover:bg-gray-700">
+                <i data-lucide="bar-chart" class="w-5 h-5"></i>
+                <span>Report</span>
+            </a>
+        </div>
+        <div class="mt-auto flex items-center space-x-2">
+            <img src="https://via.placeholder.com/40" class="rounded-full" alt="User avatar">
+            <span class="text-sm">Louis Carter</span>
+        </div>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-8">
+        <header class="flex justify-between items-center mb-8">
+            <h2 class="text-xl font-bold">Students</h2>
+            <input type="text" placeholder="Search..." class="bg-gray-800 text-gray-400 px-4 py-2 rounded">
+            <a href="/admin/students/new" class="flex items-center text-gray-900 gap-2 py-2 px-4 rounded hover:opacity-80 bg-yellow-400">
+                <i data-lucide="plus" class="w-5 h-5"></i>
+                <span>Add Student</span>
+            </a>
+        </header>
+
+
+
+<!-- Students Table -->
+<table class="min-w-full bg-gray-800 shadow-md rounded overflow-hidden">
+    <tbody>
+
+        <tr class="border-b border-gray-700" th:each="student : ${students}">
+            <td class="py-2 px-4">
+                <img src="https://via.placeholder.com/40" class="rounded-full" alt="Student avatar">
+            </td>
+            <td class="py-2 px-4">John Doe</td>
+            <td class="py-2 px-4">
+                <input type="text" class="bg-gray-700 text-gray-400 px-4 py-2 rounded" value="12345">
+            </td>
+        </tr>
+
+    </tbody>
+</table>
+
+    </main>
+</div>
+</body>
+</html>
