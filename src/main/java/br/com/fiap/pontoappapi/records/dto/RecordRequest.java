@@ -13,7 +13,6 @@ public record RecordRequest(
 ) {
     public Record toModel() {
         return Record.builder()
-                .id(UUID.randomUUID())
                 .userId(userId)
                 .datetime(LocalDateTime.now())
                 .latitude(latitude)

@@ -1,6 +1,8 @@
 package br.com.fiap.pontoappapi.records;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -17,8 +19,8 @@ import java.util.UUID;
 @AllArgsConstructor
 public class Record {
     
-    @Id
-    private UUID id = UUID.randomUUID();
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String userId;
     private LocalDateTime datetime;
     private Double latitude;
